@@ -18,7 +18,6 @@ All you need to do is find a directory in which you want to create the `virtuale
 
 For this tutorial we will be using a new directory `djangogirls` from your home directory:
 
-{% filename %}command-line{% endfilename %}
 ```
 $ mkdir djangogirls
 $ cd djangogirls
@@ -26,7 +25,6 @@ $ cd djangogirls
 
 We will make a virtualenv called `myvenv`. The general command will be in the format:
 
-{% filename %}command-line{% endfilename %}
 ```
 $ python3 -m venv myvenv
 ```
@@ -36,7 +34,6 @@ data-collapse=true ces-->
 
 To create a new `virtualenv`, you need to open the console (we told you about that a few chapters ago – remember?) and run `C:\Python35\python -m venv myvenv`. It will look like this:
 
-{% filename %}command-line{% endfilename %}
 ```
 C:\Users\Name\djangogirls> C:\Python35\python -m venv myvenv
 ```
@@ -51,7 +48,6 @@ data-collapse=true ces-->
 Creating a `virtualenv` on both Linux and OS X is as simple as running `python3 -m venv myvenv`.
 It will look like this:
 
-{% filename %}command-line{% endfilename %}
 ```
 $ python3 -m venv myvenv
 ```
@@ -60,7 +56,6 @@ $ python3 -m venv myvenv
 
 > __NOTE:__ On some versions of Debian/Ubuntu you may receive the following error:
 
->{% filename %}command-line{% endfilename %}
 >```
 >The virtual environment was not created successfully because ensurepip is not available.  On Debian/Ubuntu systems, you need to install the python3-venv package using the following command.
 >    apt-get install python3-venv
@@ -68,21 +63,18 @@ $ python3 -m venv myvenv
 >```
 >
 > In this case, follow the instructions above and install the `python3-venv` package:
->{% filename %}command-line{% endfilename %}
 >```
 >$ sudo apt-get install python3-venv
 >```
 
 > __NOTE:__ On some versions of Debian/Ubuntu initiating the virtual environment like this currently gives the following error:
 
->{% filename %}command-line{% endfilename %}
 >```
 >Error: Command '['/home/eddie/Slask/tmp/venv/bin/python3', '-Im', 'ensurepip', '--upgrade', '--default-pip']' returned non-zero exit status 1
 >```
 
 > To get around this, use the `virtualenv` command instead.
 
->{% filename %}command-line{% endfilename %}
 >```
 >$ sudo apt-get install python-virtualenv
 >$ virtualenv --python=python3.5 myvenv
@@ -90,14 +82,12 @@ $ python3 -m venv myvenv
 
 > __NOTE:__ If you get an error like
 
->{% filename %}command-line{% endfilename %}
 >```
 >E: Unable to locate package python3-venv
 >```
 
 > then instead run:
 >
->{% filename %}command-line{% endfilename %}
 >```
 >sudo apt install python3.5-venv
 >```
@@ -113,14 +103,12 @@ data-collapse=true ces-->
 
 Start your virtual environment by running:
 
-{% filename %}command-line{% endfilename %}
 ```
 C:\Users\Name\djangogirls> myvenv\Scripts\activate
 ```
 
 > __NOTE:__ on Windows 10 you might get an error in the Windows PowerShell that says `execution of scripts is disabled on this system`. In this case, open another Windows PowerShell with the "Run as Administrator" option.  Then try typing the following command before starting your virtual environment:
 >
->{% filename %}command-line{% endfilename %}
 >```
 >C:\WINDOWS\system32> Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
 >     Execution Policy Change
@@ -134,7 +122,6 @@ data-collapse=true ces-->
 
 Start your virtual environment by running:
 
-{% filename %}command-line{% endfilename %}
 ```
 $ source myvenv/bin/activate
 ```
@@ -143,7 +130,6 @@ Remember to replace `myvenv` with your chosen `virtualenv` name!
 
 > __NOTE:__ sometimes `source` might not be available. In those cases try doing this instead:
 >
->{% filename %}command-line{% endfilename %}
 >```
 >$ . myvenv/bin/activate
 >```
@@ -162,14 +148,12 @@ Now that you have your `virtualenv` started, you can install Django.
 
 Before we do that, we should make sure we have the latest version of `pip`, the software that we use to install Django:
 
-{% filename %}command-line{% endfilename %}
 ```
 (myvenv) ~$ pip install --upgrade pip
 ```
 
 Then run `pip install django~=1.10.0` (note that we use a tilde followed by an equal sign: `~=`) to install Django.
 
-{% filename %}command-line{% endfilename %}
 ```
 (myvenv) ~$ pip install django~=1.10.0
 Collecting django~=1.10.0
@@ -190,7 +174,6 @@ data-collapse=true ces-->
 
 > Your command line might freeze after when you try to install Django. If this happens, instead of the above command use:
 >
->{% filename %}command-line{% endfilename %}
 >```
 >C:\Users\Name\djangogirls> python -m pip install django~=1.10.0
 >```
