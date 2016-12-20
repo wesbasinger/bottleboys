@@ -21,7 +21,6 @@ Download Git from [git-scm.com](https://git-scm.com/) and just follow the instru
 <!--sec data-title="Debian or Ubuntu" data-id="git_install_debian_ubuntu"
 data-collapse=true ces-->
 
-{% filename %}command-line{% endfilename %}
 ```bash
 $ sudo apt-get install git
 ```
