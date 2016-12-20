@@ -21,7 +21,7 @@ text.
 
 If you right click on your container on the left hand pane, you can open a SSH connection to your instance.  You should be able to see a command prompt like this:
 
-``
+`cabox@box-codeanywhere:~/workspace$`
 
 The large black area is your _terminal_, where you will give the computer CodeAnywhere
 has prepared for you instructions.
