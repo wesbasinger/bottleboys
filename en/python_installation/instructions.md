@@ -39,66 +39,6 @@ You need to go to the website https://www.python.org/downloads/release/python-35
 
 <!--endsec-->
 
-<!--sec data-title="Linux" data-id="python_linux"
-data-collapse=true ces-->
-
-It is very likely that you already have Python installed out of the box. To check if you have it installed (and which version it is), open a console and type the following command:
-
-```
-$ python3 --version
-Python 3.5.1
-```
-
-If you have a different 'micro version' of Python installed, e.g. 3.5.0, then you don't have to upgrade. If you don't have Python installed, or if you want a different version, you can install it as follows:
-
-
-<!--endsec-->
-
-<!--sec data-title="Debian or Ubuntu" data-id="python_debian"
-data-collapse=true ces-->
-
-Type this command into your console:
-
-```
-$ sudo apt-get install python3.5
-```
-
-<!--endsec-->
-
-<!--sec data-title="Fedora (up to 21)" data-id="python_fedora"
-data-collapse=true ces-->
-
-
-Use this command in your console:
-
-```
-$ sudo yum install python3
-```
-
-<!--endsec-->
-
-<!--sec data-title="Fedora (22+)" data-id="python_fedora22"
-data-collapse=true ces-->
-
-Use this command in your console:
-
-```
-$ sudo dnf install python3
-```
-
-<!--endsec-->
-
-<!--sec data-title="openSUSE" data-id="python_openSUSE"
-data-collapse=true ces-->
-
-Use this command in your console:
-
-```
-$ sudo zypper install python3
-```
-
-<!--endsec-->
-
 Verify the installation was successful by opening the *Terminal* application and running the `python3` command:
 
 ```

@@ -38,7 +38,7 @@ Run this code.
 ```
 mkdir djangoguy
 cd djangoguy
-python3.5 -mvenv myvenv
+virtualenv --python python3 myvenv                                                 
 source myvenv/bin/activate
 pip install django~=1.10.0
 ```
@@ -64,3 +64,5 @@ as it becomes more complete.
 
 Thus, sign up for a new Python Anywhere account at
 [www.pythonanywhere.com](https://www.pythonanywhere.com).
+
+You can skip to the next section.

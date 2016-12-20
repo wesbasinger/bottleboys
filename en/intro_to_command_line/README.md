@@ -32,12 +32,6 @@ Go to Applications → Utilities → Terminal.
 
 <!--endsec-->
 
-<!--sec data-title="Linux" data-id="linux_prompt" data-collapse=true ces-->
-
-It's probably under Applications → Accessories → Terminal, but that may depend on your system. If it's not there, just Google it. :)
-
-<!--endsec-->
-
 ## Prompt
 
 You now should see a white or black window that is waiting for your commands.
