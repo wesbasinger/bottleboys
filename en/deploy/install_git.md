@@ -30,7 +30,6 @@ $ sudo apt-get install git
 <!--sec data-title="Fedora (up to 21)" data-id="git_install_fedora_21"
 data-collapse=true ces-->
 
-{% filename %}command-line{% endfilename %}
 ```bash
 $ sudo yum install git
 ```
@@ -40,7 +39,6 @@ $ sudo yum install git
 <!--sec data-title="Fedora 22+" data-id="git_install_fedora_22"
 data-collapse=true ces-->
 
-{% filename %}command-line{% endfilename %}
 ```bash
 $ sudo dnf install git
 ```
@@ -50,7 +48,6 @@ $ sudo dnf install git
 <!--sec data-title="openSUSE" data-id="git_install_openSUSE"
 data-collapse=true ces-->
 
-{% filename %}command-line{% endfilename %}
 ```bash
 $ sudo zypper install git
 ```
