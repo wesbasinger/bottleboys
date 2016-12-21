@@ -137,7 +137,7 @@ Heroku is easy to use, as long as you put a `requirements.txt` file in your work
 pip freeze > requirements.txt
 ```
 
-You also need another file called `Procfile` in your working directory with the following contents.  Basically, this file just tells Heroku which file to run for the app and which port to run it on.
+You also need another file called `Procfile` in your working directory with the following contents.  Basically, this file just tells Heroku which file to run for the app and which port to run it on.  You only need one line.
 
 ```
 web: python ./app.py $PORT

@@ -2,7 +2,7 @@ You can [skip right over this section](http://tutorial.djangogirls.org/en/instal
 are, your installation experience will be a little different. You can ignore the
 rest of the installation instructions.
 
-### CodeAnywhere 
+### CodeAnywhere
 
 CodeAnywhere is a tool that gives you a code editor and access to a computer running
 on the Internet where you can install, write, and run software. For the duration
@@ -36,8 +36,8 @@ things don't get mixed up between projects.
 Run this code.
 
 ```
-mkdir bottleboys 
-cd bottleboys 
+mkdir bottleboys
+cd bottleboys
 virtualenv --python python3 myvenv                                                 
 source myvenv/bin/activate
 pip install bottle
@@ -47,7 +47,7 @@ pip install bottle
 
 Make a [Github](https://github.com) account.
 
-### PythonAnywhere
+### Heroku
 
 This tutorial includes a section on what is called Deployment,
 which is the process of taking the code that powers your new web application
@@ -57,10 +57,10 @@ people can see your work.
 This part is a little odd when doing the tutorial on a Chromebook since we're
 already using a computer that is on the Internet (as opposed to, say, a laptop).
 However, it's still useful, as we can think of our CodeAnywhere workspace as a place
-or our "in progress" work and Python Anywhere as a place to show off our stuff
+or our "in progress" work and Heroku as a place to show off our stuff
 as it becomes more complete.
 
 Thus, sign up for a new Python Anywhere account at
-[www.pythonanywhere.com](https://www.pythonanywhere.com).
+[www.heroku.com](https://www.heroku.com).
 
 You can skip to the next section.
