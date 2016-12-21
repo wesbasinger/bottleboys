@@ -58,8 +58,8 @@ How about your name? Type your first name in quotes like this:
 
 {% filename %}command-line{% endfilename %}
 ```python
->>> "Ola"
-'Ola'
+>>> "Wes"
+'Wes'
 ```
 
 You've now created your first string! It's a sequence of characters that can be processed by a computer. The string must always begin and end with the same character. This may be single (`'`) or double (`"`) quotes (there is no difference!) The quotes tell Python that what's inside of them is a string.
@@ -68,16 +68,16 @@ Strings can be strung together. Try this:
 
 {% filename %}command-line{% endfilename %}
 ```python
->>> "Hi there " + "Ola"
-'Hi there Ola'
+>>> "Hi there " + "Wes"
+'Hi there Wes'
 ```
 
 You can also multiply strings with a number:
 
 {% filename %}command-line{% endfilename %}
 ```python
->>> "Ola" * 3
-'OlaOlaOla'
+>>> "Wes" * 3
+'WesWesWes'
 ```
 
 If you need to put an apostrophe inside your string, you have two ways to do it.
@@ -102,21 +102,21 @@ Nice, huh? To see your name in uppercase letters, simply type:
 
 {% filename %}command-line{% endfilename %}
 ```python
->>> "Ola".upper()
-'OLA'
+>>> "Wes".upper()
+'WES'
 ```
 
-You just used the `upper` __method__ on your string! A method (like `upper()`) is a sequence of instructions that Python has to perform on a given object (`"Ola"`) once you call it.
+You just used the `upper` __method__ on your string! A method (like `upper()`) is a sequence of instructions that Python has to perform on a given object (`"Wes"`) once you call it.
 
 If you want to know the number of letters contained in your name, there is a __function__ for that too!
 
 {% filename %}command-line{% endfilename %}
 ```python
->>> len("Ola")
+>>> len("Wes")
 3
 ```
 
-Wonder why sometimes you call functions with a `.` at the end of a string (like `"Ola".upper()`) and sometimes you first call a function and place the string in parentheses? Well, in some cases, functions belong to objects, like `upper()`, which can only be performed on strings. In this case, we call the function a __method__. Other times, functions don't belong to anything specific and can be used on different types of objects, just like `len()`. That's why we're giving `"Ola"` as a parameter to the `len` function.
+Wonder why sometimes you call functions with a `.` at the end of a string (like `"Wes".upper()`) and sometimes you first call a function and place the string in parentheses? Well, in some cases, functions belong to objects, like `upper()`, which can only be performed on strings. In this case, we call the function a __method__. Other times, functions don't belong to anything specific and can be used on different types of objects, just like `len()`. That's why we're giving `"Wes"` as a parameter to the `len` function.
 
 ### Summary
 
@@ -164,26 +164,26 @@ Let's say we want to create a new variable called `name`:
 
 {% filename %}command-line{% endfilename %}
 ```python
->>> name = "Ola"
+>>> name = "Wes"
 ```
 
-You see? It's easy! It's simply: name equals Ola.
+You see? It's easy! It's simply: name equals Wes.
 
 As you've noticed, your program didn't return anything like it did before. So how do we know that the variable actually exists? Simply enter `name` and hit `enter`:
 
 {% filename %}command-line{% endfilename %}
 ```python
 >>> name
-'Ola'
+'Wes'
 ```
 
 Yippee! Your first variable! :) You can always change what it refers to:
 
 {% filename %}command-line{% endfilename %}
 ```python
->>> name = "Sonja"
+>>> name = "Willy"
 >>> name
-'Sonja'
+'Willy'
 ```
 
 You can use it in functions too:
@@ -226,11 +226,11 @@ Try this:
 
 {% filename %}command-line{% endfilename %}
 ```python
->>> name = 'Maria'
+>>> name = 'Mike'
 >>> name
-'Maria'
+'Mike'
 >>> print(name)
-Maria
+Mike
 ```
 
 When you just type `name`, the Python interpreter responds with the string *representation* of the variable 'name', which is the letters M-a-r-i-a, surrounded by single quotes, ''. When you say `print(name)`, Python will "print" the contents of the variable to the screen, without the quotes, which is neater.
@@ -349,13 +349,13 @@ Now, try writing the following command (try substituting your own information, t
 
 {% filename %}command-line{% endfilename %}
 ```python
->>> participant = {'name': 'Ola', 'country': 'Poland', 'favorite_numbers': [7, 42, 92]}
+>>> participant = {'name': 'Wes', 'country': 'America', 'favorite_numbers': [7, 42, 92]}
 ```
 
 With this command, you just created a variable named `participant` with three key–value pairs:
 
-- The key `name` points to the value `'Ola'` (a `string` object),
-- `country` points to `'Poland'` (another `string`),
+- The key `name` points to the value `'Wes'` (a `string` object),
+- `country` points to `'America'` (another `string`),
 - and `favorite_numbers` points to `[7, 42, 92]` (a `list` with three numbers in it).
 
 You can check the content of individual keys with this syntax:
@@ -363,7 +363,7 @@ You can check the content of individual keys with this syntax:
 {% filename %}command-line{% endfilename %}
 ```python
 >>> print(participant['name'])
-Ola
+Wes
 ```
 
 See, it's similar to a list. But you don't need to remember the index – just the name.
@@ -408,7 +408,7 @@ You can use the `pop()` method to delete an item in the dictionary. Say, if you 
 ```python
 >>> participant.pop('favorite_numbers')
 >>> participant
-{'country': 'Poland', 'favorite_language': 'Python', 'name': 'Ola'}
+{'country': 'America', 'favorite_language': 'Python', 'name': 'Wes'}
 ```
 
 As you can see from the output, the key–value pair corresponding to the 'favorite_numbers' key has been deleted.
@@ -419,7 +419,7 @@ As well as this, you can also change a value associated with an already-created 
 ```python
 >>> participant['country'] = 'Germany'
 >>> participant
-{'country': 'Germany', 'favorite_language': 'Python', 'name': 'Ola'}
+{'country': 'Germany', 'favorite_language': 'Python', 'name': 'Wes'}
 ```
 
 As you can see, the value of the key `'country'` has been altered from `'Poland'` to `'Germany'`. :) Exciting? Hurrah! You just learned another amazing thing.
@@ -497,7 +497,7 @@ Have you heard of the expression "comparing apples to oranges"? Let's try the Py
 
 {% filename %}command-line{% endfilename %}
 ```python
->>> 1 > 'django'
+>>> 1 > 'bottle'
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 TypeError: unorderable types: int() > str()
@@ -569,7 +569,7 @@ Earlier, we picked out a code editor from the [code editor](../code_editor/READM
 
 {% filename %}editor{% endfilename %}
 ```python
-print('Hello, Django girls!')
+print('Hello, Bottle boys!')
 ```
 
 Obviously, you're a pretty seasoned Python developer now, so feel free to write some code that you've learned today.
@@ -609,7 +609,7 @@ Now use Python to execute the code in the file like this:
 {% filename %}command-line{% endfilename %}
 ```
 $ python3 python_intro.py
-Hello, Django girls!
+Hello, Bottle boys!
 ```
 
 Note: on Windows 'python3' is not recognized as a command. Instead, use 'python' to execute the file:
@@ -688,11 +688,11 @@ If 2 were a greater number than 5, then the second command would be executed. Ea
 
 {% filename %}python_intro.py{% endfilename %}
 ```python
-name = 'Sonja'
-if name == 'Ola':
-    print('Hey Ola!')
-elif name == 'Sonja':
-    print('Hey Sonja!')
+name = 'Billy'
+if name == 'Wes':
+    print('Hey Wes!')
+elif name == 'Billy':
+    print('Hey Billy!')
 else:
     print('Hey anonymous!')
 ```
@@ -702,7 +702,7 @@ and executed:
 {% filename %}command-line{% endfilename %}
 ```
 $ python3 python_intro.py
-Hey Sonja!
+Hey Billy!
 ```
 
 See what happened there? `elif` lets you add extra conditions that run if the previous conditions fail.
@@ -832,7 +832,7 @@ Let's fix it at the bottom of the file:
 
 {% filename %}python_intro.py{% endfilename %}
 ```python
-hi("Ola")
+hi("Wes")
 ```
 
 And run it again:
@@ -840,14 +840,14 @@ And run it again:
 {% filename %}command-line{% endfilename %}
 ```
 $ python3 python_intro.py
-Hi Ola!
+Hi Wes!
 ```
 
 And if we change the name?
 
 {% filename %}python_intro.py{% endfilename %}
 ```python
-hi("Sonja")
+hi("Billy")
 ```
 
 And run it:
@@ -855,7 +855,7 @@ And run it:
 {% filename %}command-line{% endfilename %}
 ```
 $ python3 python_intro.py
-Hi Sonja!
+Hi Billy!
 ```
 
 Now, what do you think will happen if you write another name in there? (Not Ola or Sonja.) Give it a try and see if you're right. It should print out this:
@@ -874,7 +874,7 @@ Let's do something smarter – there are more names than two, and writing a cond
 def hi(name):
     print('Hi ' + name + '!')
 
-hi("Rachel")
+hi("Richard")
 ```
 
 Let's call the code now:
@@ -882,7 +882,7 @@ Let's call the code now:
 {% filename %}command-line{% endfilename %}
 ```
 $ python3 python_intro.py
-Hi Rachel!
+Hi Richard!
 ```
 
 Congratulations! You just learned how to write functions! :)
@@ -899,14 +899,14 @@ Still remember lists? Let's do a list of girls:
 
 {% filename %}python_intro.py{% endfilename %}
 ```python
-girls = ['Rachel', 'Monica', 'Phoebe', 'Ola', 'You']
+boys = ['Rick', 'Manny', 'Phil', 'Orin', 'You']
 ```
 
 We want to greet all of them by their name. We have the `hi` function to do that, so let's use it in a loop:
 
 {% filename %}python_intro.py{% endfilename %}
 ```python
-for name in girls:
+for name in boys:
 ```
 
 The ```for``` statement behaves similarly to the ```if``` statement; code below both of these need to be indented four spaces.
@@ -918,10 +918,10 @@ Here is the full code that will be in the file:
 def hi(name):
     print('Hi ' + name + '!')
 
-girls = ['Rachel', 'Monica', 'Phoebe', 'Ola', 'You']
-for name in girls:
+boys = ['Rick', 'Manny', 'Phil', 'Orin', 'You']
+for name in boyls:
     hi(name)
-    print('Next girl')
+    print('Next boy')
 ```
 
 And when we run it:
@@ -929,19 +929,19 @@ And when we run it:
 {% filename %}command-line{% endfilename %}
 ```
 $ python3 python_intro.py
-Hi Rachel!
-Next girl
-Hi Monica!
-Next girl
-Hi Phoebe!
-Next girl
-Hi Ola!
-Next girl
+Hi Rick!
+Next boy 
+Hi Manny!
+Next boy
+Hi Phil!
+Next boy
+Hi Orin!
+Next boy 
 Hi You!
-Next girl
+Next boy
 ```
 
-As you can see, everything you put inside a `for` statement with an indent will be repeated for every element of the list `girls`.
+As you can see, everything you put inside a `for` statement with an indent will be repeated for every element of the list `boys`
 
 You can also use `for` on numbers using the `range` function:
 
@@ -971,5 +971,3 @@ Note that the second of these two numbers is not included in the list that is ou
 That's it. __You totally rock!__ This was a tricky chapter, so you should feel proud of yourself. We're definitely proud of you for making it this far!
 
 You might want to briefly do something else – stretch, walk around for a bit, rest your eyes – before going on to the next chapter. :)
-
-![Cupcake](images/cupcake.png)
