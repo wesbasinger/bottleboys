@@ -58,12 +58,12 @@ def index():
 def about():
   return "This is the about me route."
 
-@route('/post/<post_number>')
-def post(post_number):
-  return "This is post number " + str(post_number)"
+@route('/blog/<post_number>')
+def blog(post_number):
+  return "This is blog number " + str(post_number)"
 
 run(host="0.0.0.0", port=argv[1], debug=True)
 ```
-Now navigate to `0.0.0.0:8080/post/10`.  It should say "This is post number 10".  Bottle is reading the route parameter from the URL!  That is extremely helpful.  It allows us to pass information like variables between client and server.
+Now navigate to `0.0.0.0:8080/blog/10`.  It should say "This is blog number 10".  Bottle is reading the route parameter from the URL!  That is extremely helpful.  It allows us to pass information like variables between client and server.
 
 I think that's all we really need to cover for right now, but you should know that you can include multiple parameters in the route and do different types of requests to the same URL, as long as you change the route method.
