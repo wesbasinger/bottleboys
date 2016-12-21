@@ -36,14 +36,12 @@ things don't get mixed up between projects.
 Run this code.
 
 ```
-mkdir djangoguy
-cd djangoguy
+mkdir bottleboys 
+cd bottleboys 
 virtualenv --python python3 myvenv                                                 
 source myvenv/bin/activate
-pip install django~=1.10.0
+pip install bottle
 ```
-
-(note that on the last line we use a tilde followed by an equal sign: ~=).
 
 ### Github
 

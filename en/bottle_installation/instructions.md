@@ -1,26 +1,20 @@
-> Part of this section is based on tutorials by Geek Girls Carrots (https://github.com/ggcarrots/django-carrots).
-
-> Part of this section is based on the [django-marcador
-tutorial](http://django-marcador.keimlink.de/) licensed under the Creative Commons
-Attribution-ShareAlike 4.0 International License. The django-marcador tutorial
-is copyrighted by Markus Zapke-Gründemann et al.
-
-
 ## Virtual environment
 
-Before we install Django we will get you to install an extremely useful tool to help keep your coding environment tidy on your computer. It's possible to skip this step, but it's highly recommended. Starting with the best possible setup will save you a lot of trouble in the future!
+*Remember, if you're using a Chromebook, you already did this step.*
+
+Before we install Bottle we will get you to install an extremely useful tool to help keep your coding environment tidy on your computer. It's possible to skip this step, but it's highly recommended. Starting with the best possible setup will save you a lot of trouble in the future!
 
 So, let's create a **virtual environment** (also called a *virtualenv*). Virtualenv will isolate your Python/Django setup on a per-project basis. This means that any changes you make to one website won't affect any others you're also developing. Neat, right?
 
 All you need to do is find a directory in which you want to create the `virtualenv`; your home directory, for example. On Windows it might look like `C:\Users\Name\` (where `Name` is the name of your login).
 
-> __NOTE:__ On Windows, make sure that this directory does not contain accented or special characters; if your username contains accented characters, use a different directory, for example `C:\djangogirls`.
+> __NOTE:__ On Windows, make sure that this directory does not contain accented or special characters; if your username contains accented characters, use a different directory, for example `C:\bottleboys`.
 
-For this tutorial we will be using a new directory `djangogirls` from your home directory:
+For this tutorial we will be using a new directory `bottleboys` from your home directory:
 
 ```
-$ mkdir djangogirls
-$ cd djangogirls
+$ mkdir bottleboys 
+$ cd bottleboys
 ```
 
 We will make a virtualenv called `myvenv`. The general command will be in the format:
@@ -35,7 +29,7 @@ data-collapse=true ces-->
 To create a new `virtualenv`, you need to open the console (we told you about that a few chapters ago – remember?) and run `C:\Python35\python -m venv myvenv`. It will look like this:
 
 ```
-C:\Users\Name\djangogirls> C:\Python35\python -m venv myvenv
+C:\Users\Name\bottleboys> C:\Python35\python -m venv myvenv
 ```
 
 where `C:\Python35\python` is the directory in which you previously installed Python and `myvenv` is the name of your `virtualenv`. You can use any other name, but stick to lowercase and use no spaces, accents or special characters. It is also good idea to keep the name short – you'll be referencing it a lot!
@@ -104,7 +98,7 @@ data-collapse=true ces-->
 Start your virtual environment by running:
 
 ```
-C:\Users\Name\djangogirls> myvenv\Scripts\activate
+C:\Users\Name\bottleboys> myvenv\Scripts\activate
 ```
 
 > __NOTE:__ on Windows 10 you might get an error in the Windows PowerShell that says `execution of scripts is disabled on this system`. In this case, open another Windows PowerShell with the "Run as Administrator" option.  Then try typing the following command before starting your virtual environment:
@@ -142,49 +136,16 @@ When working within a virtual environment, `python` will automatically refer to 
 
 OK, we have all important dependencies in place. We can finally install Django!
 
-## Installing Django
+## Installing Bottle 
 
-Now that you have your `virtualenv` started, you can install Django.
+Now that you have your `virtualenv` started, you can install Bottle.
 
-Before we do that, we should make sure we have the latest version of `pip`, the software that we use to install Django:
+Before we do that, we should make sure we have the latest version of `pip`, the software that we use to install Bottle:
 
 ```
 (myvenv) ~$ pip install --upgrade pip
 ```
 
-Then run `pip install django~=1.10.0` (note that we use a tilde followed by an equal sign: `~=`) to install Django.
+Then run `pip install bottle` to install Bottle.
 
-```
-(myvenv) ~$ pip install django~=1.10.0
-Collecting django~=1.10.0
-  Downloading Django-1.10.4-py2.py3-none-any.whl (6.8MB)
-Installing collected packages: django
-Successfully installed django-1.10.4
-```
-
-<!--sec data-title="Windows" data-id="django_err_windows"
-data-collapse=true ces-->
-
-> If you get an error when calling pip on Windows platform, please check if your project pathname contains spaces, accents or special characters (for example, `C:\Users\User Name\djangogirls`). If it does, please consider using another place without spaces, accents or special characters (suggestion: `C:\djangogirls`). Create a new virtualenv in the new directory, then delete the old one and try the above command again. (Moving the virtualenv directory won't work since virtualenv uses absolute paths.)
-
-<!--endsec-->
-
-<!--sec data-title="Windows 8 and Windows 10" data-id="django_err_windows8and10"
-data-collapse=true ces-->
-
-> Your command line might freeze after when you try to install Django. If this happens, instead of the above command use:
->
->```
->C:\Users\Name\djangogirls> python -m pip install django~=1.10.0
->```
-
-<!--endsec-->
-
-<!--sec data-title="Linux" data-id="django_err_linux"
-data-collapse=true ces-->
-
-> If you get an error when calling pip on Ubuntu 12.04 please run `python -m pip install -U --force-reinstall pip` to fix the pip installation in the virtualenv.
-
-<!--endsec-->
-
-That's it! You're now (finally) ready to create a Django application!
+That's it! You're now (finally) ready to create a Bottle application!

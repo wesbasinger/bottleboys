@@ -9,8 +9,8 @@ data-id="chromebook_setup" data-collapse=true ces-->
 # Install Python
 {% include "/python_installation/instructions.md" %}
 
-# Set up virtualenv and install Django
-{% include "/django_installation/instructions.md" %}
+# Set up virtualenv and install Bottle
+{% include "/bottle_installation/instructions.md" %}
 
 # Install a code editor
 {% include "/code_editor/instructions.md" %}
@@ -35,9 +35,7 @@ Congratulations, you are all set up and ready to go! If you still have some time
 
 * [Introduction to Python](../python_introduction/README.md)
 
-* [What is Django?](../django/README.md)
-
 
 # Enjoy the workshop!
 
-When you begin the workshop, you'll be able to go straight to [Your first Django project!](../django_start_project/README.md) because you already covered the material in the earlier chapters.
+When you begin the workshop, you'll be able to go straight to [Your first Bottle project!](../bottle_start_project/README.md) because you already covered the material in the earlier chapters.
