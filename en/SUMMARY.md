@@ -9,7 +9,7 @@
 * [Introduction to Python](python_introduction/README.md)
 * [What is Bottle?](bottle/README.md)
 * [Bottle installation](bottle_installation/README.md)
-* [Your first Django project!](django_start_project/README.md)
+* [Your first Bottle project!](bottle_hello_world/README.md)
 * [Django models](django_models/README.md)
 * [Django admin](django_admin/README.md)
 * [Deploy!](deploy/README.md)
