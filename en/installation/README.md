@@ -21,8 +21,8 @@ data-id="chromebook_setup" data-collapse=true ces-->
 # Create a GitHub account
 Go to [GitHub.com](https://www.github.com) and sign up for a new, free user account.
 
-# Create a PythonAnywhere account
-{% include "/deploy/signup_pythonanywhere.md" %}
+# Create a Heroku account
+{% include "/deploy/signup_heroku.md" %}
 
 
 # Start reading

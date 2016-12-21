@@ -8,13 +8,14 @@ Make a file called `app.py` in your `bottleboys` directory.
 
 {% filename %}app.py{% endfilename %}
 ```
+from sys import argv
 from bottle import route, run
 
 @route('/')
 def index():
   return "Hello World!"
 
-run(host="0.0.0.0", port=8080, debug=True)
+run(host="0.0.0.0", port=argv[1], debug=True)
 ```
 
 > Remember to run everything in the virtualenv. If you don't see a prefix `(myvenv)` in your console, you need to activate your virtualenv. We explained how to do that in the __Bottle installation__ chapter in the __Working with virtualenv__ part. Typing `myvenv\Scripts\activate` on Windows or
@@ -28,7 +29,7 @@ You need to be in the directory that contains the `app.py` file (the `bottleboys
 
 {% filename %}command-line{% endfilename %}
 ```
-(myvenv) ~/bottleboys$ python app.py
+(myvenv) ~/bottleboys$ python app.py 8080
 ```
 
 
