@@ -1,4 +1,4 @@
-# Django Tutorial
+# Bottle Tutorial
 
 > This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License.
 > To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/4.0/
@@ -16,10 +16,5 @@ We hope that we'll be able to make you love technology as much as we do!
 ## What will you learn during the tutorial?
 
 Once you've finished the tutorial, you will have a simple, working web application: your own blog. We will show you how to put it online, so others will see your work!
-
-It will (more or less) look like this:
-
-![Figure 0.1](images/application.png)
-
 
 OK, [let's start at the beginning…](./how_the_internet_works/README.md)

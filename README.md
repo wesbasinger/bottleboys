@@ -1,6 +1,6 @@
-# Django Tutorial
+# Bottle Tutorial
 
-This is the source code repository for the Django Guy Tutorial. All content is adapted from [tutorial.djangogirls.org](http://tutorial.djangogirls.org) so if you want to read it, please go there. If you want to contribute please do go further with this file.
+This is the source code repository for the Bottle Boys Tutorial. A great deal of the content is adapted from [tutorial.djangogirls.org](http://tutorial.djangogirls.org) so if you want to read it, please go there. If you want to contribute please do go further with this file.
 
 # Further information and help
 
