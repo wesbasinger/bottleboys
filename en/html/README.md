@@ -4,7 +4,7 @@ What's a template, you may ask?
 
 A template is a file that we can re-use to present different information in a consistent format – for example, you could use a template to help you write a letter, because although each letter might contain a different message and be addressed to a different person, they will share the same format.
 
-A Django template's format is described in a language called HTML (that's the HTML we mentioned in the first chapter, __How the Internet works__).
+A Bottle template's format is described in a language called HTML (that's the HTML we mentioned in the first chapter, __How the Internet works__).
 
 ## What is HTML?
 
@@ -16,39 +16,56 @@ HTML stands for "HyperText Markup Language". __HyperText__ means it's a type of 
 
 Creating a template means creating a template file. Everything is a file, right? You have probably noticed this already.
 
-Templates are saved in `blog/templates/blog` directory. So first create a directory called `templates` inside your blog directory. Then create another directory called `blog` inside your templates directory:
+Templates are saved in `views` directory. So first create a directory called `views` inside your project directory.  Then your project directory should look like this.
+```
+bottleboys
+└───/views
+└───app.py
+└───Procfile
+└───db.json
+└───/myvenv
+└───requirements.txt
 
 ```
-blog
-└───templates
-    └───blog
-```
-
-(You might wonder why we need two directories both called `blog` – as you will discover later, this is simply a useful naming convention that makes life easier when things start to get more complicated.)
-
-And now create a `post_list.html` file (just leave it blank for now) inside the `blog/templates/blog` directory.
-
-See how your website looks now: http://127.0.0.1:8000/
-
-> If you still have an error `TemplateDoesNotExist`, try to restart your server. Go into command line, stop the server by pressing Ctrl+C (Control and C buttons together) and start it again by running a `python manage.py runserver` command.
-
-![Figure 11.1](images/step1.png)
-
-No error anymore! Congratulations :) However, your website isn't actually publishing anything except an empty page, because your template is empty too. We need to fix that.
+And now create a `index.tpl` file inside the `views` directory.
 
 Add the following to your template file:
 
-{% filename %}blog/templates/blog/post_list.html{% endfilename %}
+{% filename %}views/index.tpl{% endfilename %}
 ```html
 <html>
-    <p>Hi there!</p>
+    <h1>Hi there!</h1>
     <p>It works!</p>
 </html>
 ```
+Save the file.  Now you need to go to `app.py` and instruct the Bottle route to use the new template.
 
-So how does your website look now? Visit it to find out: http://127.0.0.1:8000/
+{% filename %}app.py{% endfilename %}
+```python
+from sys import argv
+from bottle import route, run, template # This line is new!!!
+from tinydb import TinyDB
 
-![Figure 11.2](images/step3.png)
+@route('/')
+def index():
+  ''' # COMMENT THIS OUT (FOR NOW)
+  db = TinyDB("db.json")
+  posts = db.table("posts")
+  '''
+  return template('index.tpl')
+
+@route('/about')
+def about():
+  return "This is the about me route."
+
+@route('/blog/<post_number>')
+def blog(post_number):
+  return "This is blog number " + str(post_number)"
+
+run(host="0.0.0.0", port=argv[1], debug=True)
+```
+
+So how does your website look now? Visit it to find out: http://0.0.0.0:8000/
 
 It worked! Nice work there :)
 
@@ -67,11 +84,11 @@ We use `<head>` to tell the browser about the configuration of the page, and `<b
 
 For example, you can put a web page title element inside the `<head>`, like this:
 
-{% filename %}blog/templates/blog/post_list.html{% endfilename %}
+{% filename %}views/index.tpl{% endfilename %}
 ```html
 <html>
     <head>
-        <title>Ola's blog</title>
+        <title>Blog of Wes</title>
     </head>
     <body>
         <p>Hi there!</p>
@@ -80,11 +97,9 @@ For example, you can put a web page title element inside the `<head>`, like this
 </html>
 ```
 
-Save the file and refresh your page.
 
-![Figure 11.3](images/step4.png)
 
-Notice how the browser has understood that "Ola's blog" is the title of your page? It has interpreted `<title>Ola's blog</title>` and placed the text in the title bar of your browser (it will also be used for bookmarks and so on).
+Notice how the browser has understood that "Blog of Wes" is the title of your page? It has interpreted `<title>Blog of Wes</title>` and placed the text in the title bar of your browser (it will also be used for bookmarks and so on).
 
 Probably you have also noticed that each opening tag is matched by a _closing tag_, with a `/`, and that elements are _nested_ (i.e. you can't close a particular tag until all the ones that were inside it have been closed too).
 
@@ -103,21 +118,21 @@ You can now have a little fun and try to customize your template! Here are a few
 - `<em>text</em>` emphasizes your text
 - `<strong>text</strong>` strongly emphasizes your text
 - `<br />` goes to another line (you can't put anything inside br)
-- `<a href="https://djangogirls.org">link</a>` creates a link
+- `<a href="https://wesbasinger.github.io">link</a>` creates a link
 - `<ul><li>first item</li><li>second item</li></ul>` makes a list, just like this one!
 - `<div></div>` defines a section of the page
 
-Here's an example of a full template, copy and paste it into `blog/templates/blog/post_list.html`:
+Here's an example of a full template, copy and paste it into `views/index.tpl`:
 
-{% filename %}blog/templates/blog/post_list.html{% endfilename %}
+{% filename %}views/index.tpl{% endfilename %}
 ```html
 <html>
     <head>
-        <title>Django Girls blog</title>
+        <title>Bottle Boys blog</title>
     </head>
     <body>
         <div>
-            <h1><a href="">Django Girls Blog</a></h1>
+            <h1><a href="">Bottle Boys Blog</a></h1>
         </div>
 
         <div>
@@ -140,28 +155,26 @@ We've created three `div` sections here.
 - The first `div` element contains the title of our blog – it's a heading and a link
 - Another two `div` elements contain our blogposts with a published date, `h2` with a post title that is clickable and two `p`s (paragraph) of text, one for the date and one for our blogpost.
 
-It gives us this effect:
-
-![Figure 11.4](images/step6.png)
+PUT A PICTURE HERE
 
 Yaaay! But so far, our template only ever displays exactly __the same information__ – whereas earlier we were talking about templates as allowing us to display __different__ information in the __same format__.
 
-What we really want to do is display real posts added in our Django admin – and that's where we're going next.
+What we really want to do is display real posts – and that's where we're going next.
 
 ## One more thing:  deploy!
 
-It'd be good to see all this out and live on the Internet, right?  Let's do another PythonAnywhere deploy:
+It'd be good to see all this out and live on the Internet, right?  Let's do another Heroku deploy:
 
 ### Commit, and push your code up to Github
 
-First off, let's see what files have changed since we last deployed (run these commands locally, not on PythonAnywhere):
+First off, let's see what files have changed since we last deployed:
 
 {% filename %}command-line{% endfilename %}
 ```
 $ git status
 ```
 
-Make sure you're in the `djangogirls` directory and let's tell `git` to include all the changes within this directory:
+Make sure you're in the `bottleboys` directory and let's tell `git` to include all the changes within this directory:
 
 {% filename %}command-line{% endfilename %}
 ```
@@ -193,20 +206,12 @@ Once we've done that, we upload (push) our changes up to GitHub:
 $ git push
 ```
 
-### Pull your new code down to PythonAnywhere, and reload your web app
-
-* Open up the [PythonAnywhere consoles page](https://www.pythonanywhere.com/consoles/) and go to your **Bash console** (or start a new one). Then, run:
+### Push your new code down to Heroku, and reload your web app
 
 {% filename %}command-line{% endfilename %}
 ```
-$ cd ~/my-first-blog
-$ git pull
+$ git push heroku master
 [...]
 ```
 
-And watch your code get downloaded. If you want to check that it's arrived, you can hop over to the **Files tab** and view your code on PythonAnywhere.
-
-
-* Finally, hop on over to the [Web tab](https://www.pythonanywhere.com/web_app_setup/) and hit **Reload** on your web app.
-
-Your update should be live! Go ahead and refresh your website in the browser. Changes should be visible. :)
+Your update should be live! Go ahead and refresh your website in the browser. Changes should be visible. :)  Remeber, you can use the `heroku open` command as a shortcut to open your website.
