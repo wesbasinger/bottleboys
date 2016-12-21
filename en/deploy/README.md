@@ -4,11 +4,11 @@
 
 Until now, your website was only available on your computer.  Now you will learn how to deploy it! Deploying is the process of publishing your application on the Internet so people can finally go and see your app. :)
 
-As you learned, a website has to be located on a server. There are a lot of server providers available on the internet. We will use one that has a relatively simple deployment process: [PythonAnywhere](https://pythonanywhere.com/). PythonAnywhere is free for small applications that don't have too many visitors so it'll definitely be enough for you now.
+As you learned, a website has to be located on a server. There are a lot of server providers available on the internet. We will use one that has a relatively simple deployment process: [Heroku](https://heroku.com/). Heroku is free for small applications that don't have too many visitors so it'll definitely be enough for you now.
 
 The other external service we'll be using is [GitHub](https://www.github.com), which is a code hosting service. There are others out there, but almost all programmers have a GitHub account these days, and now so will you!
 
-These three places will be important to you.  Your local computer will be the place where you do development and testing.  When you're happy with the changes, you will place a copy of your program on GitHub.  Your website will be on PythonAnywhere and you will update it by getting a new copy of your code from GitHub.
+These three places will be important to you.  Your local computer will be the place where you do development and testing.  When you're happy with the changes, you will place a copy of your program on GitHub.  Your website will be on Heroku and you will update it by pushing a new copy of your code.
 
 # Git
 
@@ -120,11 +120,11 @@ Branch master set up to track remote branch master from origin.
 Your code is now on GitHub. Go and check it out!  You'll find it's in fine company – [Django](https://github.com/django/django), the [Bottle Boys Tutorial](https://github.com/wesbasinger/bottleboys), and many other great open source software projects also host their code on GitHub. :)
 
 
-# Setting up our blog on PythonAnywhere
+# Setting up our blog on Heroku
 
-> **Note** You might have already created a PythonAnywhere account earlier during the install steps – if so, no need to do it again.
+> **Note** You might have already created a Heroku account earlier during the install steps – if so, no need to do it again.
 
-{% include "/deploy/signup_pythonanywhere.md" %}
+{% include "/deploy/signup_heroku.md" %}
 
 
 ## Pushing our code to Heroku
