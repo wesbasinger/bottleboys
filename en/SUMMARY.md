@@ -18,7 +18,7 @@
 * [Dynamic data in templates](dynamic_data_in_templates/README.md)
 * [Bottle templates](bottle_templates/README.md)
 * [CSS – make it pretty](css/README.md)
-* [Template extending](template_extending/README.md)
+* [Template including](template_including/README.md)
 * [Extend your application](extend_your_application/README.md)
 * [Django Forms](django_forms/README.md)
 * [What's next?](whats_next/README.md)
