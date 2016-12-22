@@ -46,6 +46,7 @@ Time to make our database file.  In your `bottleboys` project directory, create 
         {
           "postId" : "1",
           "author" : "Wes Basinger",
+          "title" : "First Post",
           "date" : "2016 12 21",
           "body" : "This is my first post with of my new blog, I hope you like it!",
           "comments" : []
@@ -54,6 +55,7 @@ Time to make our database file.  In your `bottleboys` project directory, create 
         {
           "postId" : "2",
           "author" : "Wes Basinger",
+          "title" : "Second Post",
           "date" : "2016 12 24",
           "body" : "It's Christmas Eve, I'm so excited!",
           "comments" : []
@@ -73,7 +75,7 @@ Just to get a feel for how our data is stored and how we can access it, we'll us
 >>> db = TinyDB('db.json')
 >>> posts = db.table("posts")
 >>> posts.all()
-[{u'date': u'2016 12 21', u'body': u'This is my first post with of my new blog, I hope you like it!', u'postId': u'1', u'comments': [], u'author': u'Wes Basinger'}, {u'date': u'2016 12 24', u'body': u"It's Christmas Eve, I'm so excited!", u'postId': u'2', u'comments': [], u'author': u'Wes Basinger'}]
+[{u'date': u'2016 12 21', u'body': u'This is my first post with of my new blog, I hope you like it!', u'postId': u'1', u'comments': [], u'author': u'Wes Basinger', u'title': u'First Post'}, {u'date': u'2016 12 24', u'body': u"It's Christmas Eve, I'm so excited!", u'postId': u'2', u'comments': [], u'author': u'Wes Basinger', u'title': u'Second Post'}]
 ```
 
 And now you can see, all of our posts made it into the database.  TinyDB has lots of methods for modifying our database, all of them are CRUD operations.

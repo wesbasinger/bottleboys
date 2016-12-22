@@ -60,7 +60,7 @@ def about():
 
 @route('/blog/<post_number>')
 def blog(post_number):
-  return "This is blog number " + str(post_number)"
+  return "This is blog number " + str(post_number)
 
 run(host="0.0.0.0", port=argv[1], debug=True)
 ```
@@ -214,4 +214,4 @@ $ git push heroku master
 [...]
 ```
 
-Your update should be live! Go ahead and refresh your website in the browser. Changes should be visible. :)  Remeber, you can use the `heroku open` command as a shortcut to open your website.
+Your update should be live! Go ahead and refresh your website in the browser. Changes should be visible. :)  Remember, you can use the `heroku open` command as a shortcut to open your website.

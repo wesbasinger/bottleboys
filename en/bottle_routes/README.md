@@ -60,7 +60,7 @@ def about():
 
 @route('/blog/<post_number>')
 def blog(post_number):
-  return "This is blog number " + str(post_number)"
+  return "This is blog number " + str(post_number)
 
 run(host="0.0.0.0", port=argv[1], debug=True)
 ```
