@@ -101,4 +101,4 @@ Last, the lowly footer.  There's hardly any code in this file.
 </html>
 ```
 
-That's it! Check if your website is still working properly. :)
+That's it! The include functions will piece all the parts of our website together for us.  Now, when we start making new pages, we only have to change the middle part of the page, the body, or the div with class `content container`.  Check if your website is still working properly. :)
