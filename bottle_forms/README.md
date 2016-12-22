@@ -127,9 +127,30 @@ run(host="0.0.0.0", port=argv[1], debug=True)
 
 Now restart the server, go back and visit [http://0.0.0.0:8080/new](http://0.0.0.0:8080/new).  You should be able to write new blog posts with ease!
 
+But instead of having to type in the `/new` part on the end of the address, let's modify the header file to include a new post link.  Open up `header.tpl`.
+
+{% filename %}views/header.tpl{% endfilename %}
+```html
+<html>
+    <head>
+        <title>Bottle Boys blog</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+         <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
+         <link rel="stylesheet" href="/static/blog.css">
+    </head>
+    <body>
+        <div class="page-header">
+            <h1><a href="/">Bottle Boys Blog</a></h1>
+            <h2><span class="glyphicon glyphicon-plus"></span><a href="/new"> New Post</a></h2>
+        </div>
+```
+
+
+
 ## One more thing: deploy time!
 
-Let's see if all this works on PythonAnywhere. Time for another deploy!
+Let's see if all this works on Heroku. Time for another deploy!
 
 * First, commit your new code, and push it up to Github:
 
@@ -142,16 +163,12 @@ $ git commit -m "Added views to create/edit blog post inside the site."
 $ git push
 ```
 
-* Then, in a [PythonAnywhere Bash console](https://www.pythonanywhere.com/consoles/):
+* Then:
 
 {% filename %}command-line{% endfilename %}
 ```
-$ cd my-first-blog
-$ git pull
+$ git push heroku master
 [...]
 ```
-
-* Finally, hop on over to the [Web tab](https://www.pythonanywhere.com/web_app_setup/) and hit **Reload**.
-
 
 And that should be it! Congrats :)
