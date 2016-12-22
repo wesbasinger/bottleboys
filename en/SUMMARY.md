@@ -20,5 +20,5 @@
 * [CSS – make it pretty](css/README.md)
 * [Template including](template_including/README.md)
 * [Extend your application](extend_your_application/README.md)
-* [Django Forms](django_forms/README.md)
+* [Bottle Forms](bottle_forms/README.md)
 * [What's next?](whats_next/README.md)
