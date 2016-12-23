@@ -28,7 +28,7 @@ This doesn't add any files to your project. It just points to files that exist o
 
 ![Figure 14.1](images/bootstrap1.png)
 
-Looking nicer already!
+Looking nicer already!  But things are a little too tight to the left, let's fix that with a CSS style sheet of our own.
 
 
 ## Static files in Bottle
@@ -109,22 +109,19 @@ Time to write some CSS! Open up the `static/blog.css` file in your code editor.
 
 We won't be going too deep into customizing and learning about CSS here. It's pretty easy and you can learn it on your own after this workshop. There is a recommendation for a free course to learn more at the end of this page.
 
-But let's do at least a little. Maybe we could change the color of our header?
-To understand colors, computers use special codes. These codes start with `#` followed by 6 letters (A–F) and numbers (0–9). For example, the code for blue is `#0000FF`. You can find the color codes for many colors here: http://www.colorpicker.com/. You may also use [predefined colors](http://www.w3schools.com/colors/colors_names.asp), such as `red` and `green`.
+But let's do at least a little. Maybe we could change the padding on the left side?
+To understand spacing, computers use pixel units.
 
 In your `static/blog.css` file you should add the following code:
 
 {% filename %}static/blog.css{% endfilename %}
 ```css
-h1 a {
-    border: solid;
-    border-style: groove;
-    border-width: 4px;
-    padding: 4px
+body {
+    padding-left: 15px;
 }
 ```
 
-`h1 a` is a CSS Selector. This means we're applying our styles to any `a` element inside of an `h1` element. So when we have something like `<h1><a href="">link</a></h1>`, the `h1 a` style will apply. In this case, we're telling it to change its color to `#FCA205`, which is orange. Of course, you can put your own color here!
+`body` is a CSS Selector. This means we're applying our styles to the `body` element. So this rule will apply to anything within the body tags and will override any Bootstrap stylings from above.
 
 In a CSS file we determine styles for elements in the HTML file. The first way we identify elements is with the element name. You might remember these as tags from the HTML section. Things like `a`, `h1`, and `body` are all examples of element names.
 We also identify elements by the attribute `class` or the attribute `id`. Class and id are names you give the element by yourself. Classes define groups of elements, and ids point to specific elements. For example, you could identify the following tag by using the tag name `a`, the class `external_link`, or the id `link_to_wiki_page`:
@@ -174,23 +171,10 @@ Your file should now look like this:
 
 OK, save the file and refresh the site!
 
-![Border]('images/border.png')
+![Border]('images/padding.png')
 
 
-Nice work! Maybe we would also like to give our website a little air and increase the margin on the left side? Let's try this!  Add another selector in your css file.
-
-{% filename %}blog/static/css/blog.css{% endfilename %}
-```css
-body {
-    padding-left: 15px;
-}
-```
-
-Add that to your CSS, save the file and see how it works!
-
-![Padding](images/padding.png)
-
-Maybe we can customize the font in our header? Paste this into your `<head>` in `views/index.html` file:
+Nice work! Do you notice the increased spacing on the left hand side?  Maybe we can customize the font in our header? Paste this into your `<head>` in `views/index.html` file:
 
 {% filename %}views/index.html{% endfilename %}
 ```html
@@ -199,22 +183,18 @@ Maybe we can customize the font in our header? Paste this into your `<head>` in 
 
 As before, check the order and place before the link to `static/blog.css`. This line will import a font called *Exo 2* from Google Fonts (https://www.google.com/fonts).
 
-Find the `h1 a` declaration block (the code between braces `{` and `}`) in the CSS file `views/blog.css`.  Now add the line `font-family: 'Exo 2';` between the braces, and refresh the page:
+Find the `h1 a` declaration block (the code between braces `{` and `}`) in the CSS file `views/blog.css`.  Now add the line `font-family: 'Exo 2';` between the braces (before or after the body declaration), and refresh the page:
 
 {% filename %}views/blog.css{% endfilename %}
 ```css
 h1 a {
-    border: solid;
-    border-style: groove;
-    border-width: 4px;
-    padding: 4px;
     font-family: 'Exo 2';
 }
 ```
 
 ![Figure 14.3](images/font.png)
 
-The heading has disappeared for now, but it will be back when we turn the background color to blue.
+Hopefully you can see the slight change in the font family heading.
 
 As mentioned above, CSS has a concept of classes. These allow you to name a part of the HTML code and apply styles only to this part, without affecting other parts. This can be super helpful! Maybe you have two divs that are doing something different (like your header and your post).  A class can help you make them look different.
 
@@ -237,58 +217,6 @@ And now add a class `post` to your `div` containing a blog post.
   <h3>{{post["author"]}}</h3>
   <p>{{post["body"]}}</p>
 </div>
-```
-
-We will now add declaration blocks to different selectors. Selectors starting with `.` relate to classes. There are many great tutorials and explanations about CSS on the Web that can help you understand the following code. For now, just copy and paste it into your `static/blog.css` file:
-
-{% filename %}static/blog.css{% endfilename %}
-```css
-.page-header {
-    background-color: #4286f4;
-    margin-top: 0;
-    padding: 20px 20px 20px 40px;
-}
-
-.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
-    color: #ffffff;
-    font-size: 36pt;
-    text-decoration: none;
-}
-
-.content {
-    margin-left: 40px;
-}
-
-h1, h2, h3, h4 {
-    font-family: 'Exo 2', sans-serif;
-}
-
-.date {
-    color: #828282;
-}
-
-.save {
-    float: right;
-}
-
-.post-form textarea, .post-form input {
-    width: 100%;
-}
-
-.top-menu, .top-menu:hover, .top-menu:visited {
-    color: #ffffff;
-    float: right;
-    font-size: 26pt;
-    margin-right: 20px;
-}
-
-.post {
-    margin-bottom: 70px;
-}
-
-.post h1 a, .post h1 a:visited {
-    color: #000000;
-}
 ```
 
 Then surround the HTML code which displays the posts with declarations of classes. Replace this:
@@ -324,10 +252,66 @@ in the `view/index.html` with this:
   </div>
 </div>
 ```
+If you got lost, here's how the entire `index.html` should look.
 
-Save those files and refresh your website.
+{% filename %}views/index.html{% endfilename %}
+```html
+<html>
+    <head>
+        <title>Bottle Boys blog</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
+        <link rel="stylesheet" href="/static/blog.css">
+    </head>
+    <body>
+        <div class="page-header">
+            <h1><a href="/">Bottle Boys blog</a></h1>
+        </div>
+      <div class="content container">
+        <div class="row">
+            <div class="col-md-8">
+              % for post in posts:
+                <div class="post">
+                  <p>published: {{post["date"]}}</p>
+                  <h2><a href="">{{post["title"]}}</a></h2>
+                  <h3>{{post["author"]}}</h3>
+                  <p>{{post["body"]}}</p>
+                </div>
+              % end
+            </div>
+        </div>
+      </div>
+    </body>
+</html>
+```
 
-![Figure 14.4](images/final.png)
+Save that file and let's add some more custom styling with `blog.css`.  When finished, it should contain the following style rules.
+
+{% filename %}static/blog.css{% endfilename %}
+```css
+body {
+    padding-left: 15px;
+}
+h1 a {
+    font-family: 'Exo 2';
+}
+.page-header {
+  background-color: #033482;
+  color: white;
+  padding: 20px;
+}
+
+.post h2 {
+  font-family: 'Exo 2';
+}
+.content-container {
+  background-color: #949fb2;
+}
+```
+Save all files, restart the server and reload the page.
+
+![Final](images/final.png)
 
 Woohoo! Looks awesome, right?
 Look at the code we just pasted to find the places where we added classes in the HTML and used them in the CSS. Where would you make the change if you wanted the date to be turquoise?
