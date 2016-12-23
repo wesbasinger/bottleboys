@@ -16,9 +16,9 @@ It was written by programmers who worked for Twitter. Now it's developed by volu
 
 ## Install Bootstrap
 
-To install Bootstrap, you need to add this to your `<head>` in your `.tpl` file:
+To install Bootstrap, you need to add this to your `<head>` in your `.html` file:
 
-{% filename %}views/index.tpl{% endfilename %}
+{% filename %}views/index.html{% endfilename %}
 ```html
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
@@ -60,13 +60,13 @@ We need to make another route in `app.py` to serve files from the `static` direc
 from sys import argv
 from bottle import route, run, template, static_file # This line is new!!!
 from tinydb import TinyDB
-import os
+import os # This line is new!!!
 
 @route('/')
 def index():
   db = TinyDB("db.json")
   posts = db.table("posts")
-  return template('index.tpl', posts=list(posts.all()))
+  return template('index.html', posts=list(posts.all()))
 
 @route('/about')
 def about():
@@ -76,6 +76,9 @@ def about():
 def blog(post_number):
   return "This is blog number " + str(post_number)
 
+################################
+#  This route is new           #
+################################
 @route('/static/<filename>')
 def server_static(filename):
     cwd = os.getcwd()
@@ -114,7 +117,10 @@ In your `static/blog.css` file you should add the following code:
 {% filename %}static/blog.css{% endfilename %}
 ```css
 h1 a {
-    color: #FCA205;
+    border: solid;
+    border-style: groove;
+    border-width: 4px;
+    padding: 4px
 }
 ```
 
@@ -129,9 +135,9 @@ We also identify elements by the attribute `class` or the attribute `id`. Class 
 
 You can read more about [CSS Selectors at w3schools](http://www.w3schools.com/cssref/css_selectors.asp).
 
-Between the `<head>` and `</head>` tags, after the links to the Bootstrap CSS files, add this line:
+Between the `<head>` and `</head>` tags, after the links to the Bootstrap CSS files, add this line to `index.html`:
 
-{% filename %}views/index.tpl{% endfilename %}
+{% filename %}views/index.html{% endfilename %}
 ```html
 <link rel="stylesheet" href="/static/blog.css">
 ```
@@ -140,7 +146,7 @@ We just told our template where our CSS file is located.
 
 Your file should now look like this:
 
-{% filename %}views/index.tpl{% endfilename %}
+{% filename %}views/index.html{% endfilename %}
 ```html
 <html>
     <head>
@@ -168,8 +174,10 @@ Your file should now look like this:
 
 OK, save the file and refresh the site!
 
+![Border]('images/border.png')
 
-Nice work! Maybe we would also like to give our website a little air and increase the margin on the left side? Let's try this!
+
+Nice work! Maybe we would also like to give our website a little air and increase the margin on the left side? Let's try this!  Add another selector in your css file.
 
 {% filename %}blog/static/css/blog.css{% endfilename %}
 ```css
@@ -180,37 +188,39 @@ body {
 
 Add that to your CSS, save the file and see how it works!
 
-![Figure 14.3](images/margin2.png)
+![Padding](images/padding.png)
 
-Maybe we can customize the font in our header? Paste this into your `<head>` in `views/index.tpl` file:
+Maybe we can customize the font in our header? Paste this into your `<head>` in `views/index.html` file:
 
-{% filename %}views/index.tpl{% endfilename %}
+{% filename %}views/index.html{% endfilename %}
 ```html
 <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
 ```
 
-As before, check the order and place before the link to `static/blog.css`. This line will import a font called *Exo* from Google Fonts (https://www.google.com/fonts).
+As before, check the order and place before the link to `static/blog.css`. This line will import a font called *Exo 2* from Google Fonts (https://www.google.com/fonts).
 
-Find the `h1 a` declaration block (the code between braces `{` and `}`) in the CSS file `views/blog.css`.  Now add the line `font-family: 'Lobster';` between the braces, and refresh the page:
+Find the `h1 a` declaration block (the code between braces `{` and `}`) in the CSS file `views/blog.css`.  Now add the line `font-family: 'Exo 2';` between the braces, and refresh the page:
 
 {% filename %}views/blog.css{% endfilename %}
 ```css
 h1 a {
-    color: #FCA205;
+    border: solid;
+    border-style: groove;
+    border-width: 4px;
+    padding: 4px;
     font-family: 'Exo 2';
 }
 ```
 
 ![Figure 14.3](images/font.png)
 
-Great!
-
+The heading has disappeared for now, but it will be back when we turn the background color to blue.
 
 As mentioned above, CSS has a concept of classes. These allow you to name a part of the HTML code and apply styles only to this part, without affecting other parts. This can be super helpful! Maybe you have two divs that are doing something different (like your header and your post).  A class can help you make them look different.
 
 Go ahead and name some parts of the HTML code. Add a class called `page-header` to your `div` that contains your header, like this:
 
-{% filename %}views/index.tpl{% endfilename %}
+{% filename %}views/index.html{% endfilename %}
 ```html
 <div class="page-header">
     <h1><a href="/">Bottle Boys Blog</a></h1>
@@ -219,7 +229,7 @@ Go ahead and name some parts of the HTML code. Add a class called `page-header` 
 
 And now add a class `post` to your `div` containing a blog post.
 
-{% filename %}views/index.tpl{% endfilename %}
+{% filename %}views/index.html{% endfilename %}
 ```html
 <div class="post">
   <p>published: {{post["date"]}}</p>
@@ -283,7 +293,7 @@ h1, h2, h3, h4 {
 
 Then surround the HTML code which displays the posts with declarations of classes. Replace this:
 
-{% filename %}views/index.tpl{% endfilename %}
+{% filename %}views/index.html{% endfilename %}
 ```html
 % for post in posts:
   <div class="post">
@@ -295,9 +305,9 @@ Then surround the HTML code which displays the posts with declarations of classe
 % end
 ```
 
-in the `view/index.tpl` with this:
+in the `view/index.html` with this:
 
-{% filename %}views/index.tpl{% endfilename %}
+{% filename %}views/index.html{% endfilename %}
 ```html
 <div class="content container">
   <div class="row">

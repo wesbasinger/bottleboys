@@ -1,7 +1,7 @@
 # Installation
-In this class you will be building a blog, and there are a few setup tasks in the tutorial which would be good to work through beforehand so that you are ready.
+In this class you will be building a blog, and there are a few setup tasks in the tutorial which would be good to work through beforehand so that you are ready.  You can choose to develop on any platform you like, and there are some pretty good instructions for Windows, Mac and Linux.  All the book examples will be based on a cloud environment,  since that is browser based, it should look the same on all platforms.
 
-<!--sec data-title="Chromebook setup (if you're using one)"
+<!--sec data-title="Cloud setup (if you're using one)"
 data-id="chromebook_setup" data-collapse=true ces-->
 {% include "/chromebook_setup/instructions.md" %}
 <!--endsec-->

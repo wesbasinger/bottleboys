@@ -2,7 +2,7 @@
 
 Eventually we're going to create a blog, but first, we will create something very simple.  We are going to create a "Hello World" web page.  Working through these instructions will allow us to understand the basic structure of a Bottle application and we will get to see all of the basic routing principles it takes to be successful.
 
-Bottle is a very lightweight framework, most of our code will go into one single file, which we will name `app.py`.  If you go to the [Bottle site](http://www.math.com/students/worksheet/algebra_sp.html) you can see much of what we will cover in this initial section.
+Bottle is a very lightweight framework, most of our code will go into one single file, which we will name `app.py`.  If you go to the [Bottle site](https://bottlepy.org/docs/dev/tutorial.html) you can see much of what we will cover in this initial section.
 
 Make a file called `app.py` in your `bottleboys` directory.
 
@@ -13,7 +13,7 @@ from bottle import route, run
 
 @route('/')
 def index():
-  return "Hello World!"
+  return "Hello World: A Message in a Bottle App"
 
 run(host="0.0.0.0", port=argv[1], debug=True)
 ```
@@ -25,7 +25,7 @@ And we're done! Time to start the web server and see if our website is working!
 
 ## Starting the web server
 
-You need to be in the directory that contains the `app.py` file (the `bottleboys` directory). In the console, we can start the web server by running `python app.py`:
+You need to be in the directory that contains the `app.py` file (the `bottleboys` directory). In the console, we can start the web server by running `python app.py` with the port number as an argument.  So go back to the terminal and run this:
 
 {% filename %}command-line{% endfilename %}
 ```
@@ -39,6 +39,10 @@ Now all you need to do is check that your website is running. Open your browser 
 ```
 http://0.0.0.0:8080/
 ```
+
+If you're running the code on CodeAnywhere, then you'll want to pull up the info page, click on the first link and append the port number with a colon to the end.  I've included an example for mine below.
+
+![Info page](images/info.png)
 
 Congratulations! You've just created your first website and run it using a web server! Isn't that awesome?
 

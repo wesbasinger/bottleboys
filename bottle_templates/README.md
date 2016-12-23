@@ -20,7 +20,7 @@ To print a variable in Bottle templates, we use double curly brackets with the v
 
 Bottle understands posts is a list of objects. Remember from __Introduction to Python__ how we can display lists? Yes, with for loops! In a Bottle template you do them like this:
 
-{% filename %}views/index.tpl{% endfilename %}
+{% filename %}views/index.html{% endfilename %}
 ```html
 <html>
     <head>
@@ -46,9 +46,9 @@ Try this in your template.
 
 Have you noticed that we used a slightly different notation this time (`{{ post["title"] }}` or `{{ post["body"] }})`? We are accessing data in each of the fields defined in our blog model.
 
-Fire up the webserver and see if it worked.  If it did, it should look something like this:
+Fire up the server and see if it worked.  If it did, it should look something like this:
 
-PICTURE HERE
+![Dynamic data]('images/dynamic.png')
 
 ## One more thing
 
@@ -76,4 +76,4 @@ $ git push heroku master
 [...]
 ```
 
-* Finally, hop on over to your web app. Your update should be live! If the blog posts on your heroku site don't match the posts appearing on the blog hosted on your local server, that's OK. The databases on your local computer and Heroku don't sync with the rest of your files.  In fact, there is no data on the Heroku version as of yet.
+* Finally, hop on over to your web app. Your update should be live! If you don't have blog posts on your Heroku site, that's OK. The databases on your local computer and Heroku don't sync with the rest of your files.  In fact, there is no data on the Heroku version as of yet.

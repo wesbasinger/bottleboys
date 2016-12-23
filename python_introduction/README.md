@@ -16,7 +16,7 @@ We want to open up a Python console, so type in `python` on Windows or `python3`
 
 {% filename %}command-line{% endfilename %}
 ```
-$ python3
+$ python
 Python 3.5.1 (...)
 Type "help", "copyright", "credits" or "license" for more information.
 >>>
@@ -567,6 +567,10 @@ This will put you back into the command prompt.
 
 Earlier, we picked out a code editor from the [code editor](../code_editor/README.md) section. We'll need to open the editor now and write some code into a new file:
 
+If you are working on the CodeAnywhere platform, you can right click on one of the folders in your container and create a new file with the dialog box.  I've included a picture below.
+
+![Making a new file](images/file.png)
+
 {% filename %}editor{% endfilename %}
 ```python
 print('Hello, Bottle boys!')
@@ -574,49 +578,19 @@ print('Hello, Bottle boys!')
 
 Obviously, you're a pretty seasoned Python developer now, so feel free to write some code that you've learned today.
 
-Now we need to save the file and give it a descriptive name. Let's call the file **python_intro.py** and save it to your desktop. We can name the file anything we want, but the important part here is to make sure the file ends in __.py__. The __.py__ extension tells our operating system that this is a **Python executable file** and Python can run it.
+Now we need to save the file and give it a descriptive name. Let's call the file **python_intro.py** and save it to a folder in your workspace. We can name the file anything we want, but the important part here is to make sure the file ends in __.py__. The __.py__ extension tells our operating system that this is a **Python executable file** and Python can run it.
 
 > **Note** You should notice one of the coolest thing about code editors: colors! In the Python console, everything was the same color; now you should see that the `print` function is a different color from the string. This is called "syntax highlighting", and it's a really useful feature when coding. The color of things will give you hints, such as unclosed strings or a typo in a keyword name (like the `def` in a function, which we'll see below). This is one of the reasons we use a code editor. :)
 
 
-With the file saved, it's time to run it! Using the skills you've learned in the command line section, use the terminal to **change directories** to the desktop.
-
-On a Mac, the command will look something like this:
-
-{% filename %}command-line{% endfilename %}
-```
-$ cd ~/Desktop
-```
-
-On Linux, it will be like this (the word "Desktop" might be translated to your local language):
-
-{% filename %}command-line{% endfilename %}
-```
-$ cd ~/Desktop
-```
-
-And on Windows, it will be like this:
-
-{% filename %}command-line{% endfilename %}
-```
-> cd %HomePath%\Desktop
-```
-
-If you get stuck, just ask for help.
+With the file saved, it's time to run it! Using the skills you've learned in the command line section, use the terminal to **change directories** to whichever directory you saved the file.  You can use the `cd` command. If you get stuck, just ask for help.
 
 Now use Python to execute the code in the file like this:
 
 {% filename %}command-line{% endfilename %}
 ```
-$ python3 python_intro.py
+$ python python_intro.py
 Hello, Bottle boys!
-```
-
-Note: on Windows 'python3' is not recognized as a command. Instead, use 'python' to execute the file:
-
-{% filename %}command-line{% endfilename %}
-```python
-> python python_intro.py
 ```
 
 Alright! You just ran your first Python program that was saved to a file. Feel awesome?
@@ -638,7 +612,7 @@ If we were to save and run this, we'd see an error like this:
 
 {% filename %}command-line{% endfilename %}
 ```
-$ python3 python_intro.py
+$ python python_intro.py
 File "python_intro.py", line 2
          ^
 SyntaxError: unexpected EOF while parsing
@@ -658,11 +632,10 @@ Save it and give it another run:
 
 {% filename %}command-line{% endfilename %}
 ```python
-$ python3 python_intro.py
+$ python python_intro.py
 It works!
 ```
 
-Note: Remember that on Windows, 'python3' is not recognized as a command. From now on, replace 'python3' with 'python' to execute the file.
 
 ### What if a condition isn't True?
 
@@ -680,7 +653,7 @@ When this is run it will print out:
 
 {% filename %}command-line{% endfilename %}
 ```
-$ python3 python_intro.py
+$ python python_intro.py
 5 is indeed greater than 2
 ```
 
@@ -701,7 +674,7 @@ and executed:
 
 {% filename %}command-line{% endfilename %}
 ```
-$ python3 python_intro.py
+$ python python_intro.py
 Hey Billy!
 ```
 
@@ -730,7 +703,7 @@ Python runs through each test in sequence and prints:
 
 {% filename %}command-line{% endfilename %}
 ```
-$ python3 python_intro.py
+$ python python_intro.py
 Perfect, I can hear all the details
 ```
 
@@ -788,7 +761,7 @@ Let's run this now and see what happens:
 
 {% filename %}command-line{% endfilename %}
 ```
-$ python3 python_intro.py
+$ python python_intro.py
 Hi there!
 How are you?
 ```
@@ -805,10 +778,10 @@ As you can see, we now gave our function a parameter that we called `name`:
 {% filename %}python_intro.py{% endfilename %}
 ```python
 def hi(name):
-    if name == 'Ola':
-        print('Hi Ola!')
-    elif name == 'Sonja':
-        print('Hi Sonja!')
+    if name == 'Wes':
+        print('Hi Wes!')
+    elif name == 'Billy':
+        print('Hi Billy!')
     else:
         print('Hi anonymous!')
 
@@ -819,7 +792,7 @@ Remember: The `print` function is indented four spaces within the `if` statement
 
 {% filename %}command-line{% endfilename %}
 ```
-$ python3 python_intro.py
+$ python python_intro.py
 Traceback (most recent call last):
 File "python_intro.py", line 10, in <module>
   hi()
@@ -839,7 +812,7 @@ And run it again:
 
 {% filename %}command-line{% endfilename %}
 ```
-$ python3 python_intro.py
+$ python python_intro.py
 Hi Wes!
 ```
 
@@ -854,11 +827,11 @@ And run it:
 
 {% filename %}command-line{% endfilename %}
 ```
-$ python3 python_intro.py
+$ python python_intro.py
 Hi Billy!
 ```
 
-Now, what do you think will happen if you write another name in there? (Not Ola or Sonja.) Give it a try and see if you're right. It should print out this:
+Now, what do you think will happen if you write another name in there? (Not Wes or Billy.) Give it a try and see if you're right. It should print out this:
 
 {% filename %}command-line{% endfilename %}
 ```
@@ -881,7 +854,7 @@ Let's call the code now:
 
 {% filename %}command-line{% endfilename %}
 ```
-$ python3 python_intro.py
+$ python python_intro.py
 Hi Richard!
 ```
 
@@ -928,15 +901,15 @@ And when we run it:
 
 {% filename %}command-line{% endfilename %}
 ```
-$ python3 python_intro.py
+$ python python_intro.py
 Hi Rick!
-Next boy 
+Next boy
 Hi Manny!
 Next boy
 Hi Phil!
 Next boy
 Hi Orin!
-Next boy 
+Next boy
 Hi You!
 Next boy
 ```

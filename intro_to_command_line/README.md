@@ -2,6 +2,8 @@
 
 > For readers at home: this chapter is covered in the [Your new friend: Command Line](https://www.youtube.com/watch?v=jvZLWhkzX-8) video.
 
+> Please note, if you are using CodeAnywhere as your platform, then the SSH terminal is where you will run your commands.  You should follow the Mac Linux directions.
+
 It's exciting, right?! You'll write your first line of code in just a few minutes! :)
 
 __Let us introduce you to your first new friend: the command line!__

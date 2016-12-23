@@ -16,9 +16,9 @@ def index():
   db = TinyDB("db.json")
   posts = db.table("posts")
   '''
-  return template('index.tpl')
+  return template('index.html')
 ```
-But, there was a problem.  None of the data from our database was actually showing up in the webpage.  That was partially due to the fact that we were not sending the data to the template.  Change `app.py` in the following manner to fix this error.
+But, there was a problem.  None of the data from our database was actually showing up in the webpage.  That was partially due to the fact that we were not sending the data to the template.  Change `app.py` in the following manner to fix this error.  Only modify the index route right now.
 
 {% filename %}app.py{% endfilename %}
 ```python
@@ -26,7 +26,7 @@ But, there was a problem.  None of the data from our database was actually showi
 def index():
   db = TinyDB("db.json")
   posts = db.table("posts")
-  return template('index.tpl', posts=list(posts.all()))
+  return template('index.html', posts=list(posts.all()))
 ```
 
 

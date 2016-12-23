@@ -18,7 +18,7 @@ Imagine a mailbox (port) which is monitored for incoming letters (requests). Thi
 
 When a request comes to a web server, it's passed to Bottle which tries to figure out what is actually requested. It takes a web page address first and tries to figure out what to do. This part is done by what's called a decorator function.  It will look at the route being requested and match it against a series of functions which are decorated with routes.
 
-Imagine a mail carrier with a letter. She is walking down the street and checks each house number against the one on the letter. If it matches, she puts the letter there. This is how the urlresolver works!
+Imagine a mail carrier with a letter. She is walking down the street and checks each house number against the one on the letter. If it matches, she puts the letter there. This is how the route decorator works!
 
 In the *view* function, all the interesting things are done: we can look at a database to look for some information. Maybe the user asked to change something in the data? Like a letter saying, "Please change the description of my job."  The *view* can check if you are allowed to do that, then update the job description for you and send back a message: "Done!" Then the *view* generates a response and Bottle can send it to the user's web browser.
 

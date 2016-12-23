@@ -27,11 +27,11 @@ bottleboys
 └───requirements.txt
 
 ```
-And now create a `index.tpl` file inside the `views` directory.
+And now create a `index.html` file inside the `views` directory.
 
 Add the following to your template file:
 
-{% filename %}views/index.tpl{% endfilename %}
+{% filename %}views/index.html{% endfilename %}
 ```html
 <html>
     <h1>Hi there!</h1>
@@ -67,7 +67,9 @@ run(host="0.0.0.0", port=argv[1], debug=True)
 
 So how does your website look now? Visit it to find out: http://0.0.0.0:8000/
 
-It worked! Nice work there :)
+It worked! Nice work there :)  It should look something like the picture below.
+
+![It worked, again!]('images/it_worked.png')
 
 - The most basic tag, `<html>`, is always the beginning of any web page and `</html>` is always the end. As you can see, the whole content of the website goes between the beginning tag `<html>` and closing tag `</html>`
 - `<p>` is a tag for paragraph elements; `</p>` closes each paragraph
@@ -84,7 +86,7 @@ We use `<head>` to tell the browser about the configuration of the page, and `<b
 
 For example, you can put a web page title element inside the `<head>`, like this:
 
-{% filename %}views/index.tpl{% endfilename %}
+{% filename %}views/index.html{% endfilename %}
 ```html
 <html>
     <head>
@@ -96,8 +98,6 @@ For example, you can put a web page title element inside the `<head>`, like this
     </body>
 </html>
 ```
-
-
 
 Notice how the browser has understood that "Blog of Wes" is the title of your page? It has interpreted `<title>Blog of Wes</title>` and placed the text in the title bar of your browser (it will also be used for bookmarks and so on).
 
@@ -122,9 +122,9 @@ You can now have a little fun and try to customize your template! Here are a few
 - `<ul><li>first item</li><li>second item</li></ul>` makes a list, just like this one!
 - `<div></div>` defines a section of the page
 
-Here's an example of a full template, copy and paste it into `views/index.tpl`:
+Here's an example of a full template, copy and paste it into `views/index.html`:
 
-{% filename %}views/index.tpl{% endfilename %}
+{% filename %}views/index.html{% endfilename %}
 ```html
 <html>
     <head>
@@ -155,7 +155,9 @@ We've created three `div` sections here.
 - The first `div` element contains the title of our blog – it's a heading and a link
 - Another two `div` elements contain our blogposts with a published date, `h2` with a post title that is clickable and two `p`s (paragraph) of text, one for the date and one for our blogpost.
 
-PUT A PICTURE HERE
+If you run the server again, you should see something like this.
+
+![lorem ipsum text]('images/step1.png')
 
 Yaaay! But so far, our template only ever displays exactly __the same information__ – whereas earlier we were talking about templates as allowing us to display __different__ information in the __same format__.
 
@@ -206,7 +208,7 @@ Once we've done that, we upload (push) our changes up to GitHub:
 $ git push
 ```
 
-### Push your new code down to Heroku, and reload your web app
+### Push your new code up to Heroku, and reload your web app
 
 {% filename %}command-line{% endfilename %}
 ```

@@ -40,7 +40,6 @@ Git will track changes to all the files and folders in this directory, but there
 *~
 __pycache__
 myvenv
-/static
 .DS_Store
 db.json
 ```
@@ -139,6 +138,7 @@ pip freeze > requirements.txt
 
 You also need another file called `Procfile` in your working directory with the following contents.  Basically, this file just tells Heroku which file to run for the app and which port to run it on.  You only need one line.
 
+{% filename %}Procfile% endfilename %}
 ```
 web: python ./app.py $PORT
 ```
@@ -153,9 +153,9 @@ Now, run one more command `git push heroku master`.  That command sends your cod
 
 # You are live!
 
-The default page for your site should say "Hello World!", just like it does on your local computer.
+The default page for your site should say "Hello World: A Message in a Bottle App", just like it does on your local computer.
 
-You can go back to your local setup. From here you should work on your local setup to make changes. This is a common workflow in web development – make changes locally, push those changes to GitHub, and push your changes down to Heroku. This allows you to work and experiment without breaking your live Web site. Pretty cool, huh?
+You can go back to your local setup. From here you should work on your local setup to make changes. This is a common workflow in web development – make changes locally, push those changes to GitHub, and push your changes up to Heroku. This allows you to work and experiment without breaking your live Web site. Pretty cool, huh?
 
 
 Give yourself a *HUGE* pat on the back! Server deployments are one of the trickiest parts of web development and it often takes people several days before they get them working. But you've got your site live, on the real Internet, just like that!
