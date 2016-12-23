@@ -6,7 +6,7 @@ Congratulate yourself! __You're totally awesome__. We're proud! <3
 
 Take a break and relax. You have just done something really huge.
 
-After that, make sure to follow Wes Basinger on [Facebook](http://facebook.com/wcb84) or [Twitter](https://twitter.com/twenty2caliber) to stay up to date.
+After that, make sure to follow me on [Facebook](http://facebook.com/wcb84) or [Twitter](https://twitter.com/twenty2caliber) to stay up to date.
 
 ### Can you recommend any further resources?
 
