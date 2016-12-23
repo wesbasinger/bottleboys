@@ -8,18 +8,18 @@ Templates help when you want to use the same information or layout in more than 
 
 A header and footer template will let you include a header and a footer on every page of your website.
 
-Let's create a `header.tpl` and a `footer.tpl` file in `views`:
+Let's create a `header.html` and a `footer.html` file in `views`:
 
 ```
 views
-└───index.tpl
-└───header.tpl
-└───footer.tpl
+└───index.html
+└───header.html
+└───footer.html
 ```
 
-Then open it up and copy everything from `index.tpl` to `header.tpl` file, like this:
+Then open it up and copy everything from `index.html` to `header.html` file, like this:
 
-{% filename %}header.tpl{% endfilename %}
+{% filename %}header.html{% endfilename %}
 ```html
 <html>
     <head>
@@ -51,11 +51,11 @@ Then open it up and copy everything from `index.tpl` to `header.tpl` file, like 
 </html>
 ```
 
-Do the same thing with `footer.tpl`.  You should now have three identical files.  Wait, what?  What's going on?  You're about to see.
+Do the same thing with `footer.html`.  You should now have three identical files.  Wait, what?  What's going on?  You're about to see.
 
-Then in `header.tpl`, delete everything from `<div class="row">` down.  It should end up looking like this:
+Then in `header.html`, delete everything from `<div class="row">` down.  It should end up looking like this:
 
-{% filename %}views/header.tpl{% endfilename %}
+{% filename %}views/header.html{% endfilename %}
 ```html
 <html>
     <head>
@@ -73,9 +73,9 @@ Then in `header.tpl`, delete everything from `<div class="row">` down.  It shoul
 
 Next, we'll doctor up the index page.  Notice how much less code it takes to define the way the body of the page will look.  
 
-{% filename %}views/index.tpl{% endfilename %}
+{% filename %}views/index.html{% endfilename %}
 ```html
-% include("header.tpl")
+% include("header.html")
         <div class="content container">
           <div class="row">
               <div class="col-md-8">
@@ -90,12 +90,12 @@ Next, we'll doctor up the index page.  Notice how much less code it takes to def
               </div>
           </div>
       </div>
-% include('footer.tpl')
+% include('footer.html')
 ```
 
 Last, the lowly footer.  There's hardly any code in this file.
 
-{% filename %}views/footer.tpl{% endfilename %}
+{% filename %}views/footer.html{% endfilename %}
 ```html
   </body>
 </html>

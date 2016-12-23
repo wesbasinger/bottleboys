@@ -171,7 +171,7 @@ Your file should now look like this:
 
 OK, save the file and refresh the site!
 
-![Border]('images/padding.png')
+![Border](images/padding.png)
 
 
 Nice work! Do you notice the increased spacing on the left hand side?  Maybe we can customize the font in our header? Paste this into your `<head>` in `views/index.html` file:
