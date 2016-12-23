@@ -138,7 +138,7 @@ pip freeze > requirements.txt
 
 You also need another file called `Procfile` in your working directory with the following contents.  Basically, this file just tells Heroku which file to run for the app and which port to run it on.  You only need one line.
 
-{% filename %}Procfile% endfilename %}
+{% filename %}Procfile{% endfilename %}
 ```
 web: python ./app.py $PORT
 ```
