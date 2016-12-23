@@ -2,6 +2,7 @@
 
 > This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License.
 > To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/4.0/
+> Large portions of this work are copied from the Django Girls Tutorial.  For more information, visit http://djangogirls.org
 
 ## Introduction
 
