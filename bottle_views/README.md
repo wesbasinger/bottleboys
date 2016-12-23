@@ -12,7 +12,7 @@ We are going to write some code that will return all posts to us in the index ro
 ```python
 from sys import argv
 from bottle import route, run
-from tinydb import TinyDB # This line is new!!!
+from tinydb import TinyDB, Query # This line is new!!!
 
 @route('/')
 def index():

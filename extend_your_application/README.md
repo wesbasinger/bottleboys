@@ -8,10 +8,10 @@ The first thing we need in our blog is, obviously, a page to display one post, r
 
 ## Create a template link to a post's detail
 
-We will start with adding a link inside `views/index.tpl` file. So far it should look like this:
-{% filename %}views/index.tpl{% endfilename %}
+We will start with adding a link inside `views/index.html` file. So far it should look like this:
+{% filename %}views/index.html{% endfilename %}
 ```html
-% include("header.tpl")
+% include("header.html")
         <div class="content container">
           <div class="row">
               <div class="col-md-8">
@@ -26,12 +26,12 @@ We will start with adding a link inside `views/index.tpl` file. So far it should
               </div>
           </div>
       </div>
-% include('footer.tpl')
+% include('footer.html')
 ```
 
 {% raw %}We want to have a link from a post's title in the post list to the post's detail page. Let's change `<h2><a href="">{{post["title"]}}</a></h2>` so that it links to the post's detail page:{% endraw %}
 
-{% filename %}views/index.tpl{% endfilename %}
+{% filename %}views/index.html{% endfilename %}
 ```html
 <h2><a href="{{"/blog/" + post["postId"]}}">{{post["title"]}}</a></h2>
 ```
@@ -55,16 +55,16 @@ def blog(post_number):
   posts = db.table('posts')
   Post = Query()
   blog = posts.get(Post.postId == post_number)
-  return template('blog.tpl', blog=blog)
+  return template('blog.html', blog=blog)
 ```
 
 ## Create a new template to handle the blog view
 
-Make a new file called `blog.tpl` in `views`.
+Make a new file called `blog.html` in `views`.
 
-{% filename %}views/blog.tpl{% endfilename %}
+{% filename %}views/blog.html{% endfilename %}
 ```html
-% include("header.tpl")
+% include("header.html")
         <div class="content container">
           <div class="row">
               <div class="col-md-8">
@@ -75,13 +75,13 @@ Make a new file called `blog.tpl` in `views`.
               </div>
           </div>
       </div>
-% include('footer.tpl')
+% include('footer.html')
 ```
 Nice!  What a good clean look at each post.  Let's go back to the index route and only give the reader a preview of the blog body, so that they'll be forced to click the link to read on.  *Insert evil laugh.*
 
-{% filename %}views/index.tpl{% endfilename %}
+{% filename %}views/index.html{% endfilename %}
 ```html
-% include("header.tpl")
+% include("header.html")
         <div class="content container">
           <div class="row">
               <div class="col-md-8">
@@ -96,7 +96,7 @@ Nice!  What a good clean look at each post.  Let's go back to the index route an
               </div>
           </div>
       </div>
-% include('footer.tpl')
+% include('footer.html')
 ```
 
 Go ahead, check out your site and see if it's still working.  It should be!

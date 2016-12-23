@@ -44,7 +44,7 @@ Save the file.  Now you need to go to `app.py` and instruct the Bottle route to 
 ```python
 from sys import argv
 from bottle import route, run, template # This line is new!!!
-from tinydb import TinyDB
+from tinydb import TinyDB, Query
 
 @route('/')
 def index():

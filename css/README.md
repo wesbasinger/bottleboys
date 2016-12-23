@@ -59,7 +59,7 @@ We need to make another route in `app.py` to serve files from the `static` direc
 ```python
 from sys import argv
 from bottle import route, run, template, static_file # This line is new!!!
-from tinydb import TinyDB
+from tinydb import TinyDB, Query
 import os # This line is new!!!
 
 @route('/')
